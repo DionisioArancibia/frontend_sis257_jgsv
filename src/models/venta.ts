@@ -1,7 +1,7 @@
 import type { Cliente } from './cliente'
 import type { Empleado } from './empleado';
 import type { Producto } from './producto';
-import type { Ventadetalle } from './ventadetalle';
+import type { Ventadetalle } from './ventaDetalle';
 
 export interface Venta {
   id: number;
