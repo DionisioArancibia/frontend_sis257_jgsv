@@ -17,7 +17,7 @@ export interface Venta {
 
   producto: Producto;
 
-  empleado: Empleado;
+ 
   ventadetalle:Ventadetalle[]
 
 }

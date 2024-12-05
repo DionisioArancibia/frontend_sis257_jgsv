@@ -24,7 +24,7 @@ const router = createRouter({
       name: 'ventadetalles',
       component: () => import('../views/VentadetalleView.vue'),
       children: [
-        { path: '', component: () => import('../components/ventadetalle/VentadetalleList.vue') },
+        { path: '', component: () => import('../components/ventadetalle/VentaDetalleList.vue') },
         {
           path: 'crear',
           component: () => import('../components/ventadetalle/VentadetalleCreate.vue')

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Ventadetalle } from '@/models/ventadetalle'
+import type { Ventadetalle } from '@/models/ventaDetalle'
 import { onMounted, ref } from 'vue'
 import http from '@/plugins/axios'
 import router from '@/router'

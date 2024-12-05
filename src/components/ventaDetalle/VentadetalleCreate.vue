@@ -2,10 +2,11 @@
 import { ref, onMounted, defineProps } from "vue";
 import http from "@/plugins/axios";
 import router from "@/router";
-import type { Ventadetalle } from '@/models/ventadetalle';
+import type { Ventadetalle } from '@/models/ventaDetalle';
 import type { Producto } from '@/models/producto';
 import type { Venta } from '@/models/venta';
 import type { Cliente } from '@/models/cliente'; // Asegúrate de importar el tipo Cliente si es necesario
+import UsuarioCreate from "../usuario/UsuarioCreate.vue";
 
 const props = defineProps<{
   ENDPOINT_API: string;
@@ -13,30 +14,54 @@ const props = defineProps<{
 
 const ENDPOINT = props.ENDPOINT_API ?? "";
 
+
 const ventadetalle = ref<Ventadetalle>({
   id: 0,
-  cantidad: '', // Asegúrate que cantidad y subtotal sean números
-  subtotal: '',
+  cantidad: 0,
+  subtotal: 0,
   venta: {
     id: 0,
     totalVenta: 0,
-    fechaCreacion: Date,
-    cantidad:0,
+    fechaCreacion: new Date(),
+    cantidad: 0,
     precioUnitario: 0,
-    totalVenta: 0;
-
-
-
     cliente: {
       id: 0,
-      nombres: ''
-    } as Cliente 
+      nombres: "",
+      apellidos: "",
+      direccion: "",
+      telefono: 0,
+      email: ""
+    },
+
+    producto: {
+      id: 0,
+      nombre: "",
+      descripcion: "",
+      precioUnitario: 0,
+      stock: 0,
+      catagoria: {
+        id: 0,
+        nombre: ""
+      },
+      fechaCreacion: new Date()
+    },
+    ventadetalle: []
   },
   producto: {
     id: 0,
-    nombre: ''
-  } as Producto // Aquí deberías tipar correctamente producto según el tipo Producto
+    nombre: "",
+    descripcion: "",
+    precioUnitario: 0,
+    stock: 0,
+    catagoria: {
+      id: 0,
+      nombre: ""
+    },
+    fechaCreacion: new Date()
+  }
 });
+
 
 const productos = ref<Producto[]>([]);
 const ventas = ref<Venta[]>([]);

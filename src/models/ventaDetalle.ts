@@ -3,8 +3,8 @@ import type { Venta } from "./venta"
 
 export interface Ventadetalle {
   id: number;
-  cantidad: string;
-  subtotal: string;
+  cantidad: number;
+  subtotal: number;
   venta: Venta;
   producto: Producto;
 }
